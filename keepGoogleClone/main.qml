@@ -38,6 +38,19 @@ Window {
     }
 
     Dialog{
+        id: infoUsuario
+        anchors.centerIn: parent
+        standardButtons: Dialog.Close
+        Text{
+            id: popupInfoUser
+            text: "Usuário: João Pedro;    Email:jpedro@alu.ufc.br"
+            Layout.fillWidth: true
+            font.pixelSize: 14
+            clip: true
+        }
+    }
+
+    Dialog{
         id: removeAnnotationPopup
         anchors.centerIn: parent
         property var annotationIndex
@@ -104,13 +117,13 @@ Window {
                 id: titleText
                 Layout.fillWidth: true
                 text: "Lista de anotações"
-                font.pixelSize: 15
+                font.pixelSize: 14
                 clip: true
             }
 
             Button{
                 Layout.fillWidth: true
-                font.pixelSize: 15
+                font.pixelSize: 14
                 clip: true
                 icon.source: "qrc:/add.svg"
                 onClicked: {
@@ -155,11 +168,14 @@ Window {
             }
             width: parent.width
             clip: true
-            Text {
-                text: "Usuário:"
-            }
-            Text {
-                text: "Email:"
+            Button {
+                Layout.fillWidth: true
+                font.pixelSize: 14
+                clip: true
+                icon.source: "qrc:/user.svg"
+                onClicked: {
+                    infoUsuario.open()
+                }
             }
         }
     }

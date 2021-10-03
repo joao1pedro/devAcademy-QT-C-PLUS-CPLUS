@@ -7,5 +7,6 @@
         <file>trash.svg</file>
         <file>update_note.svg</file>
         <file>add.svg</file>
+        <file>user.svg</file>
     </qresource>
 </RCC>

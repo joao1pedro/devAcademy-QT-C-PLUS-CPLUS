@@ -131,6 +131,7 @@ debug/qrc_qml.cpp: ../keepGoogleClone/qml.qrc \
 		../keepGoogleClone/favorito.svg \
 		../keepGoogleClone/add.svg \
 		../keepGoogleClone/trash.svg \
+		../keepGoogleClone/user.svg \
 		../keepGoogleClone/AddAnnotationPopup.qml \
 		../keepGoogleClone/main.qml
 	C:\Qt\5.15.2\mingw81_64\bin\rcc.exe -name qml ..\keepGoogleClone\qml.qrc -o debug\qrc_qml.cpp
