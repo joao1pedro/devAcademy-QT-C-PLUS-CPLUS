@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_AnnotationModel_t {
-    QByteArrayData data[11];
-    char stringdata0[101];
+    QByteArrayData data[12];
+    char stringdata0[111];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -39,15 +39,17 @@ QT_MOC_LITERAL(3, 30, 13), // "addAnnotation"
 QT_MOC_LITERAL(4, 44, 4), // "nome"
 QT_MOC_LITERAL(5, 49, 9), // "descricao"
 QT_MOC_LITERAL(6, 59, 3), // "cor"
-QT_MOC_LITERAL(7, 63, 16), // "removeAnnotation"
-QT_MOC_LITERAL(8, 80, 5), // "index"
-QT_MOC_LITERAL(9, 86, 8), // "setTitle"
-QT_MOC_LITERAL(10, 95, 5) // "title"
+QT_MOC_LITERAL(7, 63, 9), // "date_time"
+QT_MOC_LITERAL(8, 73, 16), // "removeAnnotation"
+QT_MOC_LITERAL(9, 90, 5), // "index"
+QT_MOC_LITERAL(10, 96, 8), // "setTitle"
+QT_MOC_LITERAL(11, 105, 5) // "title"
 
     },
     "AnnotationModel\0titleChanged\0\0"
     "addAnnotation\0nome\0descricao\0cor\0"
-    "removeAnnotation\0index\0setTitle\0title"
+    "date_time\0removeAnnotation\0index\0"
+    "setTitle\0title"
 };
 #undef QT_MOC_LITERAL
 
@@ -58,7 +60,7 @@ static const uint qt_meta_data_AnnotationModel[] = {
        0,       // classname
        0,    0, // classinfo
        4,   14, // methods
-       1,   48, // properties
+       1,   50, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
@@ -68,24 +70,24 @@ static const uint qt_meta_data_AnnotationModel[] = {
        1,    0,   34,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       3,    3,   35,    2, 0x0a /* Public */,
-       7,    1,   42,    2, 0x0a /* Public */,
+       3,    4,   35,    2, 0x0a /* Public */,
+       8,    1,   44,    2, 0x0a /* Public */,
 
  // methods: name, argc, parameters, tag, flags
-       9,    1,   45,    2, 0x02 /* Public */,
+      10,    1,   47,    2, 0x02 /* Public */,
 
  // signals: parameters
     QMetaType::Void,
 
  // slots: parameters
-    QMetaType::Void, QMetaType::QString, QMetaType::QString, QMetaType::QString,    4,    5,    6,
-    QMetaType::Void, QMetaType::Int,    8,
+    QMetaType::Void, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::QString,    4,    5,    6,    7,
+    QMetaType::Void, QMetaType::Int,    9,
 
  // methods: parameters
-    QMetaType::Void, QMetaType::QString,   10,
+    QMetaType::Void, QMetaType::QString,   11,
 
  // properties: name, type, flags
-      10, QMetaType::QString, 0x00495103,
+      11, QMetaType::QString, 0x00495103,
 
  // properties: notify_signal_id
        0,
@@ -100,7 +102,7 @@ void AnnotationModel::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int 
         Q_UNUSED(_t)
         switch (_id) {
         case 0: _t->titleChanged(); break;
-        case 1: _t->addAnnotation((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2])),(*reinterpret_cast< QString(*)>(_a[3]))); break;
+        case 1: _t->addAnnotation((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2])),(*reinterpret_cast< QString(*)>(_a[3])),(*reinterpret_cast< QString(*)>(_a[4]))); break;
         case 2: _t->removeAnnotation((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 3: _t->setTitle((*reinterpret_cast< QString(*)>(_a[1]))); break;
         default: ;

@@ -129,6 +129,7 @@ debug/qrc_qml.cpp: ../keepGoogleClone/qml.qrc \
 		../keepGoogleClone/ListaDeAnotacoes.qml \
 		../keepGoogleClone/update_note.svg \
 		../keepGoogleClone/favorito.svg \
+		../keepGoogleClone/add.svg \
 		../keepGoogleClone/trash.svg \
 		../keepGoogleClone/AddAnnotationPopup.qml \
 		../keepGoogleClone/main.qml

@@ -12,7 +12,8 @@ void AnnotationController::newAnnotation(QJSValue value)
     QString name = params.value("name").toString();
     QString description = params.value("description").toString();
     QString color = params.value("color").toString();
-    m_model->addAnnotation(name, description, color);
+    QString date_time = params.value("date_time").toString();
+    m_model->addAnnotation(name, description, color, date_time);
 }
 
 void AnnotationController::setAnnotationModel(AnnotationModel *model)

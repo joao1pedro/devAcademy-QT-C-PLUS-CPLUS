@@ -7,14 +7,15 @@ import QtQuick.Controls.Material.impl 2.12
 import Models 1.0
 
 Window {
-    width: 640
-    height: 480
+    width: 860
+    height: 540
     visible: true
-    title: qsTr("Dev.Academy")
+    title: qsTr("Dev.Academy: Clone Google Keep")
     Material.accent: Material.LightBlue
+    id: root
 
     ListModel{
-        id: carrinho
+        id: favoritos
     }
 
     AddAnnotationPopup {
@@ -23,10 +24,10 @@ Window {
         onOkClicked: {
 
             if(id !== ""){
-                arrayDeAnotacoes.updateAnnotation(id, nome, descricao, cor)
+                arrayDeAnotacoes.updateAnnotation(id, nome, descricao, cor, date_time)
             }
             else {
-                arrayDeAnotacoes.addAnnotation(nome, descricao, cor)
+                arrayDeAnotacoes.addAnnotation(nome, descricao, cor, date_time)
             }
 
         }
@@ -46,53 +47,41 @@ Window {
             text: "Deseja remover a anotação?"
         }
         onAccepted: {
-            carrinho.remove(annotationIndex)
-//            total.text = carrinho.getPreco()
+            favoritos.remove(annotationIndex)
         }
     }
 
     Item {
-        id: carrinhoId
+        id: favoritosId
         anchors{
             left: parent.left
             right: parent.right
             top: parent.top
         }
-        height: parent.height/2.5
+        height: parent.height/2
 
         RowLayout{
             width: parent.width
             id: productTitle
             Text{
                 Layout.fillWidth: true
-                text: "Carrinho"
+                text: "Favoritos"
                 font.pixelSize: 15
                 clip: true
-            }
-
-            Text{
-                Layout.fillWidth: true
-                id: total
-                font.pixelSize: 15
-                clip: true
-                horizontalAlignment: Text.AlignRight
+                horizontalAlignment: Text.AlignHCenter
             }
         }
         ListaDeAnotacoes {
             width: parent.width
-            anotacaoModel: carrinho
+            anotacaoModel: favoritos
             buttonName: "Remover"
             showAddButton: false
-            showQuantity: false
             clip: true
             anchors{
                 topMargin: 10
                 top: productTitle.bottom
                 bottom: parent.bottom
             }
-//            onQuantityChanged: {
-//                total.text = carrinho.getPreco()
-//            }
             onRemoveClicked: {
                 removeAnnotationPopup.annotationIndex = index
                 removeAnnotationPopup.open()
@@ -105,7 +94,7 @@ Window {
             left: parent.left
             right: parent.right
             bottom: parent.bottom
-            top: carrinhoId.bottom
+            top: favoritosId.bottom
         }
         RowLayout{
             width: parent.width
@@ -121,9 +110,9 @@ Window {
 
             Button{
                 Layout.fillWidth: true
-                text: "Adicionar anotação"
                 font.pixelSize: 15
                 clip: true
+                icon.source: "qrc:/add.svg"
                 onClicked: {
                     addAnnotationPopup.titleText = "Adicionar anotação"
                     addAnnotationPopup.open()
@@ -132,6 +121,7 @@ Window {
         }
 
         ListaDeAnotacoes {
+            id: anotacoes
             anchors{
                 top: title.bottom
                 bottom: parent.bottom
@@ -140,7 +130,7 @@ Window {
             clip: true
             width: parent.width
             anotacaoModel: arrayDeAnotacoes
-            buttonName: "Colocar no carrinho"
+            buttonName: "Colocar no favoritos"
             onEditClicked: function(annotation, index){
                 addAnnotationPopup.titleText = "Editar anotação"
                 addAnnotationPopup.id = annotation.id
@@ -153,8 +143,23 @@ Window {
                 arrayDeAnotacoes.removeAnnotation(id)
             }
             onAddClicked: {
-                carrinho.append(annotation)
-//                total.text = carrinho.getPreco()
+                favoritos.append(annotation)
+            }
+        }
+        RowLayout{
+            id: usuario
+            anchors{
+                top: root.bottom
+                bottom: parent.bottom
+                margins: 10
+            }
+            width: parent.width
+            clip: true
+            Text {
+                text: "Usuário:"
+            }
+            Text {
+                text: "Email:"
             }
         }
     }

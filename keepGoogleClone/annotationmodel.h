@@ -14,7 +14,8 @@ public:
     enum AnnotationRoles {
         Name = Qt::DisplayRole,
         Description,
-        Color
+        Color,
+        DateTime
     };
 
     Q_PROPERTY(QString title READ title WRITE setTitle NOTIFY titleChanged)
@@ -27,7 +28,7 @@ public:
     Q_INVOKABLE void setTitle(QString title);
 
 public slots:
-    void addAnnotation(QString nome, QString descricao, QString cor);
+    void addAnnotation(QString nome, QString descricao, QString cor, QString date_time);
     void removeAnnotation(int index);
 
 signals:

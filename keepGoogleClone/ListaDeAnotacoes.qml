@@ -31,7 +31,7 @@ ListView {
                     Layout.fillWidth: true
                     Layout.fillHeight: true
                     Layout.preferredWidth: 40
-                    font.pixelSize: 15
+                    font.pixelSize: 14
                     Layout.leftMargin: 5
                     text: model.nome
                     wrapMode: Text.WordWrap
@@ -43,7 +43,7 @@ ListView {
                     Layout.preferredWidth: 40
                     Layout.fillWidth: true
                     Layout.fillHeight: true
-                    font.pixelSize: 15
+                    font.pixelSize: 14
                     text: model.descricao
                     verticalAlignment: Text.AlignVCenter
                 }
@@ -52,8 +52,18 @@ ListView {
                     Layout.preferredWidth: 40
                     Layout.fillWidth: true
                     Layout.fillHeight: true
-                    font.pixelSize: 15
+                    font.pixelSize: 14
                     text: model.cor
+                    horizontalAlignment: Text.AlignRight
+                    Layout.rightMargin: 20
+                    verticalAlignment: Text.AlignVCenter
+                }
+                Text {
+                    Layout.preferredWidth: 40
+                    Layout.fillWidth: true
+                    Layout.fillHeight: true
+                    font.pixelSize: 14
+                    text: model.date_time
                     horizontalAlignment: Text.AlignRight
                     Layout.rightMargin: 20
                     verticalAlignment: Text.AlignVCenter

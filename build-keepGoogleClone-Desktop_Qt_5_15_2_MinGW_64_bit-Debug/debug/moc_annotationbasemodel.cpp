@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_AnnotationBaseModel_t {
-    QByteArrayData data[15];
-    char stringdata0[155];
+    QByteArrayData data[16];
+    char stringdata0[165];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -44,15 +44,17 @@ QT_MOC_LITERAL(8, 81, 13), // "addAnnotation"
 QT_MOC_LITERAL(9, 95, 4), // "name"
 QT_MOC_LITERAL(10, 100, 11), // "description"
 QT_MOC_LITERAL(11, 112, 5), // "color"
-QT_MOC_LITERAL(12, 118, 16), // "removeAnnotation"
-QT_MOC_LITERAL(13, 135, 2), // "id"
-QT_MOC_LITERAL(14, 138, 16) // "updateAnnotation"
+QT_MOC_LITERAL(12, 118, 9), // "date_time"
+QT_MOC_LITERAL(13, 128, 16), // "removeAnnotation"
+QT_MOC_LITERAL(14, 145, 2), // "id"
+QT_MOC_LITERAL(15, 148, 16) // "updateAnnotation"
 
     },
     "AnnotationBaseModel\0data\0\0QModelIndex\0"
     "index\0role\0roleNames\0QHash<int,QByteArray>\0"
     "addAnnotation\0name\0description\0color\0"
-    "removeAnnotation\0id\0updateAnnotation"
+    "date_time\0removeAnnotation\0id\0"
+    "updateAnnotation"
 };
 #undef QT_MOC_LITERAL
 
@@ -73,17 +75,17 @@ static const uint qt_meta_data_AnnotationBaseModel[] = {
        1,    2,   44,    2, 0x02 /* Public */,
        1,    1,   49,    2, 0x22 /* Public | MethodCloned */,
        6,    0,   52,    2, 0x02 /* Public */,
-       8,    3,   53,    2, 0x02 /* Public */,
-      12,    1,   60,    2, 0x02 /* Public */,
-      14,    4,   63,    2, 0x02 /* Public */,
+       8,    4,   53,    2, 0x02 /* Public */,
+      13,    1,   62,    2, 0x02 /* Public */,
+      15,    5,   65,    2, 0x02 /* Public */,
 
  // methods: parameters
     QMetaType::QVariant, 0x80000000 | 3, QMetaType::Int,    4,    5,
     QMetaType::QVariant, 0x80000000 | 3,    4,
     0x80000000 | 7,
-    QMetaType::Void, QMetaType::QString, QMetaType::QString, QMetaType::QString,    9,   10,   11,
-    QMetaType::Void, QMetaType::QString,   13,
-    QMetaType::Void, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::QString,   13,    9,   10,   11,
+    QMetaType::Void, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::QString,    9,   10,   11,   12,
+    QMetaType::Void, QMetaType::QString,   14,
+    QMetaType::Void, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::QString,   14,    9,   10,   11,   12,
 
        0        // eod
 };
@@ -100,9 +102,9 @@ void AnnotationBaseModel::qt_static_metacall(QObject *_o, QMetaObject::Call _c, 
             if (_a[0]) *reinterpret_cast< QVariant*>(_a[0]) = std::move(_r); }  break;
         case 2: { QHash<int,QByteArray> _r = _t->roleNames();
             if (_a[0]) *reinterpret_cast< QHash<int,QByteArray>*>(_a[0]) = std::move(_r); }  break;
-        case 3: _t->addAnnotation((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2])),(*reinterpret_cast< QString(*)>(_a[3]))); break;
+        case 3: _t->addAnnotation((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2])),(*reinterpret_cast< QString(*)>(_a[3])),(*reinterpret_cast< QString(*)>(_a[4]))); break;
         case 4: _t->removeAnnotation((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 5: _t->updateAnnotation((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2])),(*reinterpret_cast< QString(*)>(_a[3])),(*reinterpret_cast< QString(*)>(_a[4]))); break;
+        case 5: _t->updateAnnotation((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2])),(*reinterpret_cast< QString(*)>(_a[3])),(*reinterpret_cast< QString(*)>(_a[4])),(*reinterpret_cast< QString(*)>(_a[5]))); break;
         default: ;
         }
     }

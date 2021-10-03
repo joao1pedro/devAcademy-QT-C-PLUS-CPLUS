@@ -21,6 +21,8 @@ QVariant AnnotationModel::data(const QModelIndex &index, int role) const
         return m_annotations[index.row()].descricao();
     case Color:
         return m_annotations[index.row()].cor();
+    case DateTime:
+        return m_annotations[index.row()].date_time();
     default:
         return QVariant();
     }
@@ -35,8 +37,8 @@ int AnnotationModel::rowCount(const QModelIndex &parent) const
 void AnnotationModel::setupData()
 {
     beginResetModel();
-    m_annotations.append(Annotation("Comprar Arroz", "Ir no mercantil comprar arroz", "red"));
-    m_annotations.append(Annotation("Abastecer o reservatorio", "Encher os reservatorios de agua", "green"));
+    m_annotations.append(Annotation("Comprar Arroz", "Ir no mercantil comprar arroz", "red", "Tue 2013-09-17 10:56:06"));
+    m_annotations.append(Annotation("Abastecer o reservatorio", "Encher os reservatorios de agua", "green", "Tue 2021-09-17 11:56:08"));
     endResetModel();
 }
 
@@ -55,10 +57,10 @@ void AnnotationModel::setTitle(QString title)
     emit titleChanged();
 }
 
-void AnnotationModel::addAnnotation(QString nome, QString descricao, QString cor)
+void AnnotationModel::addAnnotation(QString nome, QString descricao, QString cor, QString data_time)
 {
     beginInsertRows(QModelIndex(), rowCount(), rowCount());
-    m_annotations.append(Annotation(nome, descricao, cor));
+    m_annotations.append(Annotation(nome, descricao, cor, data_time));
     endInsertRows();
 }
 
@@ -75,6 +77,7 @@ QHash<int, QByteArray> AnnotationModel::roleNames() const
     roles[Name] = "name";
     roles[Description] = "description";
     roles[Color] = "color";
+    roles[DateTime] = "date_time";
     return roles;
 }
 

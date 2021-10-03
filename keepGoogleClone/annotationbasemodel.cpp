@@ -14,6 +14,7 @@ AnnotationBaseModel::AnnotationBaseModel(QObject *parent, Database *db): QSqlTab
     registerRoleColumns(Name, "nome");
     registerRoleColumns(Description, "descricao");
     registerRoleColumns(Color, "cor");
+    registerRoleColumns(DateTime, "date_time");
     setEditStrategy(QSqlTableModel::OnRowChange);
     select();
 }
@@ -34,14 +35,15 @@ QHash<int, QByteArray> AnnotationBaseModel::roleNames() const
     return m_roleColumns;
 }
 
-void AnnotationBaseModel::addAnnotation(QString name, QString description, QString color)
+void AnnotationBaseModel::addAnnotation(QString name, QString description, QString color, QString date_time)
 {
     QSqlQuery query(m_db->database());
     query.prepare("INSERT INTO anotacao "
-                  " (nome, descricao, cor) VALUES (:name, :description, :color)");
+                  " (nome, descricao, cor, date_time) VALUES (:name, :description, :color, :date_time)");
     query.bindValue(":name", name);
     query.bindValue(":description", description);
     query.bindValue(":color", color);
+    query.bindValue(":date_time", date_time);
     bool success = query.exec();
     if(success){
         qDebug() << "INSERT BEM SUCEDIDO";
@@ -65,18 +67,20 @@ void AnnotationBaseModel::removeAnnotation(QString id)
     select();
 }
 
-void AnnotationBaseModel::updateAnnotation(QString id, QString name, QString description, QString color)
+void AnnotationBaseModel::updateAnnotation(QString id, QString name, QString description, QString color, QString date_time)
 {
     QSqlQuery query(m_db->database());
     query.prepare("UPDATE anotacao SET "
                   " nome = :name, "
                   " descricao = :description,  "
-                  " cor = :color  "
+                  " cor = :color,  "
+                  " date_time = :date_time "
                   " WHERE id = :id");
     query.bindValue(":id", id);
     query.bindValue(":name", name);
     query.bindValue(":description", description);
     query.bindValue(":color", color);
+    query.bindValue(":date_time", date_time);
     bool success = query.exec();
     if(success){
         qDebug() << "UPDATE BEM SUCEDIDO";

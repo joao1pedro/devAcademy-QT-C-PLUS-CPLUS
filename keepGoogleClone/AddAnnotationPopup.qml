@@ -10,13 +10,14 @@ Dialog {
     id: addAnnotation
     height: 300
     width: 190
-    signal okClicked(var nome, var descricao, var cor, var id)
+    signal okClicked(var nome, var descricao, var cor, var date_time, var id)
     standardButtons: Dialog.Cancel | Dialog.Ok
     property string nome: ""
     property string descricao: ""
     property string cor: ""
-    property string id: ""
-    property string titleText: "Adicionar anotacao"
+    property string date_time: ""
+    property var id: ""
+    property string titleText: "Adicionar anotação"
 
     ColumnLayout {
         anchors.fill: parent
@@ -62,10 +63,12 @@ Dialog {
         descricao = ""
         cor = ""
         id = ""
+        date_time = ""
     }
 
     onAccepted: {
-        okClicked(nome, descricao, cor, id)
+        date_time = Qt.formatDateTime(new Date(), "ddd yyyy-MM-dd hh:mm:ss")
+        okClicked(nome, descricao, cor, date_time, id)
         clearFields()
     }
     onRejected: {
