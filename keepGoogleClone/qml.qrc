@@ -1,8 +1,10 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
-        <file>Card.qml</file>
         <file>ListaDeAnotacoes.qml</file>
         <file>AddAnnotationPopup.qml</file>
+        <file>favorito.svg</file>
+        <file>trash.svg</file>
+        <file>update_note.svg</file>
     </qresource>
 </RCC>

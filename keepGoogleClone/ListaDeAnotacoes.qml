@@ -11,13 +11,17 @@ ListView {
     signal addClicked(var annotation, var index)
     signal removeClicked(var id, var index)
     signal editClicked(var annotation, var index)
-    signal quantityChanged()
-    property bool showQuantity: false
     spacing: 3
     delegate: Item {
         height: 50
         width: root.width
-        Card{
+        Rectangle {
+            id: rect
+            anchors.fill: parent
+            color: model.cor
+            radius: 4
+            layer.enabled: root.elevation > 0
+
             RowLayout{
                 anchors.fill: parent
                 clip: true
@@ -62,8 +66,8 @@ ListView {
                     Layout.minimumWidth: 25
                     Layout.fillHeight: true
                     Layout.rightMargin: 5
-                    text: "Add"
-//                    icon.source: "qrc:/shopping-cart.svg"
+//                    text: "Favoritar"
+                    icon.source: "qrc:/favorito.svg"
                     onClicked: {
                         addClicked({id: model.id, nome: model.nome, descricao: model.descricao, cor: model.cor}, index)
                     }
@@ -74,7 +78,8 @@ ListView {
                     Layout.fillHeight: true
                     Layout.rightMargin: 5
                     visible: showAddButton
-                    text: "Editar"
+//                    text: "Editar"
+                    icon.source: "qrc:/update_note.svg"
                     onClicked: {
                         editClicked({id: model.id, nome: model.nome, descricao: model.descricao, cor: model.cor}, index)
                     }
@@ -85,13 +90,14 @@ ListView {
                     Layout.minimumWidth: 25
                     Layout.fillHeight: true
                     Layout.rightMargin: 5
-                    text: "Remove"
-//                    icon.source: "qrc:/trash.svg"
+//                    text: "Remove"
+                    icon.source: "qrc:/trash.svg"
                     onClicked: {
                         removeClicked(model.id, index)
                     }
                 }
             }
+
         }
     }
 }

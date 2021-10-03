@@ -1,9 +1,10 @@
 #include "annotation.h"
 
-Annotation::Annotation(QString nome, QString descricao, QString cor):
+Annotation::Annotation(QString nome, QString descricao, QString cor, QString data_time):
     m_nome(nome),
     m_descricao(descricao),
-    m_cor(cor)
+    m_cor(cor),
+    m_data_time(data_time)
 {
 
 }
@@ -21,4 +22,9 @@ QString Annotation::descricao() const
 QString Annotation::cor() const
 {
     return m_cor;
+}
+
+QString Annotation::data_time() const
+{
+    return m_data_time;
 }

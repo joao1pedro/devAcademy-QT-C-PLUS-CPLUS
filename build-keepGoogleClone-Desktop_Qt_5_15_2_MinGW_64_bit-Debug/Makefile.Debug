@@ -127,7 +127,9 @@ compiler_rcc_clean:
 debug/qrc_qml.cpp: ../keepGoogleClone/qml.qrc \
 		C:/Qt/5.15.2/mingw81_64/bin/rcc.exe \
 		../keepGoogleClone/ListaDeAnotacoes.qml \
-		../keepGoogleClone/Card.qml \
+		../keepGoogleClone/update_note.svg \
+		../keepGoogleClone/favorito.svg \
+		../keepGoogleClone/trash.svg \
 		../keepGoogleClone/AddAnnotationPopup.qml \
 		../keepGoogleClone/main.qml
 	C:\Qt\5.15.2\mingw81_64\bin\rcc.exe -name qml ..\keepGoogleClone\qml.qrc -o debug\qrc_qml.cpp

@@ -11,7 +11,7 @@ Window {
     height: 480
     visible: true
     title: qsTr("Dev.Academy")
-    Material.accent: Material.LightGreen
+    Material.accent: Material.LightBlue
 
     ListModel{
         id: carrinho
