@@ -1,0 +1,11 @@
+release/annotation.o
+release/annotationbasemodel.o
+release/annotationcontroller.o
+release/annotationmodel.o
+release/database.o
+release/main.o
+release/qrc_qml.o
+release/qrc_sql.o
+release/moc_annotationbasemodel.o
+release/moc_annotationcontroller.o
+release/moc_annotationmodel.o
